@@ -7,6 +7,12 @@ SRC_DIR="$PWD"
 DIST_SYMLINK="dist"
 EXPECTED_TARGET="docs"
 
+# Ensure repo uses version-controlled hooks
+if [ "$(git config --get core.hooksPath)" != ".githooks" ]; then
+    echo "[setup] Setting git hooksPath to .githooks"
+    git config core.hooksPath .githooks
+fi
+
 
 if [ ! -L "$DIST_SYMLINK" ]; then
     echo "[error] dist/ must be a symlink (expected: dist -> docs)"
