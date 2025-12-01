@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[pre-commit] Running build…"
+
+# Run the build script
+./build.sh
+
+# Detect uncommitted changes in docs/ (your dist/)
+if ! git diff --quiet docs; then
+    echo "[pre-commit] 'docs/' changed after build."
+    echo "             Please stage the updated files and commit again."
+    exit 1
+fi
+
+echo "[pre-commit] Build OK."
