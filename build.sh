@@ -62,25 +62,6 @@ magick -background transparent \
     "$DIST_REAL_PATH/android-chrome-512x512.png" \
     "$DIST_REAL_PATH/favicon.ico"
 
-# Optional Web App Manifest
-cat << 'EOF' > "$DIST_REAL_PATH/manifest.json"
-{
-    "name": "KOVULA",
-    "short_name": "Kovula",
-    "icons": [
-        {
-            "src": "android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "background_color": "#30475e",
-    "theme_color": "#30475e",
-    "display": "standalone",
-    "start_url": "/"
-}
-EOF
-
 for src in "$SRC_DIR"/*.html "$SRC_DIR"/*.css "$SRC_DIR"/kovula.svg; do
     [ -e "$src" ] || continue
     filename="$(basename "$src")"
