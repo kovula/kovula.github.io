@@ -14,105 +14,33 @@
     font-display: swap;
 }
 
-html,
-body {
-    height: 100%;
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    min-height: 100dvh;
-
     background: #30475e;
     color: #e8e8e8;
-
     font-family: "Noto Sans Mono", monospace;
     font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.55;
     letter-spacing: -0.01em;
-
     min-width: 320px;
-    overflow-x: auto;
 }
 
 main {
     flex: 1 0 auto;
     max-width: 73ch;
-    padding-top: 2.5rem;
-    box-sizing: border-box;
     padding: 2.5rem 1.25rem 0;
-}
-
-@media (max-width: 600px) {
-    padding: 3rem 1.25rem 0;
+    box-sizing: border-box;
 }
 
 h1 {
-    margin: 0 0 2.25rem 0;
-}
-
-.annotated-block {
-    position: relative;
-}
-
-.annotated-block p {
-    padding-right: 7rem;
-}
-
-.annotation-label {
-    position: absolute;
-    top: 0.25rem;
-    right: 0;
-    font-size: 0.9rem;
-    color: rgba(232, 232, 232, 0.5);
-    user-select: none;
-}
-
-@media (max-width: 600px) {
-    .annotated-block {
-        position: static;
-    }
-
-    .annotation-label {
-        position: static;
-        display: block;
-        text-align: right;
-        margin-top: 1.25rem;
-        margin-bottom: 0.25rem;
-    }
-
-    .annotated-block p {
-        margin-top: 0;
-        padding-right: 0;
-    }
-}
-
-p {
-    margin: 1.75rem 0 0 0;
-}
-
-p strong {
-    font-weight: 600;
-}
-
-.nowrap {
-    white-space: nowrap;
-}
-
-a,
-a:visited {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover,
-a:focus {
-    color: #ffffff;
+    margin: 0 0 2.75rem 0;
 }
 
 .logo {
@@ -122,14 +50,100 @@ a:focus {
     display: block;
 }
 
+.annotated-block {
+    display: grid;
+    grid-template-columns: minmax(0,70ch) 1.5rem 1px 0.75rem 7rem;
+    column-gap: 0;
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.text {
+    grid-column: 1;
+}
+
+.text p {
+    margin: 0;
+}
+
+.rule-cell {
+    grid-column: 3;
+    position: relative;
+}
+
+.rule-cell::after {
+    content: "";
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background: rgba(232,232,232,0.10);
+}
+
+.label {
+    grid-column: 5;
+    font-size: 0.9rem;
+    color: rgba(232,232,232,0.55);
+    margin-top: 0.25rem;
+    padding-top: 0;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+
+    main {
+        padding-top: 3rem;
+    }
+    .text p {
+        line-height: 1.6;
+    }
+    .annotated-block {
+        display: block;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.75rem;
+        position: relative;
+    }
+
+    .annotated-block::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: rgba(232,232,232,0.06);
+    }
+
+    .rule-cell::after {
+        content: none;
+    }
+
+    .label {
+        display: block;
+        text-align: right;
+        margin-top: 0.35rem;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+}
 
 footer {
     margin-top: 2.25rem;
-    padding-left: 1rem;
+    padding-left: 1.25rem;
     padding-bottom: 1rem;
-
     font-size: 0.9rem;
-    color: rgba(232, 232, 232, 0.35);
+    color: rgba(232,232,232,0.35);
+}
 
-    user-select: none;
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #ffffff;
 }
