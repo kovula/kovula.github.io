@@ -27,7 +27,7 @@ body {
     color: #e8e8e8;
     font-family: "Noto Sans Mono", monospace;
     font-size: 1rem;
-    line-height: 1.55;
+    line-height: 1.6;
     letter-spacing: -0.01em;
     min-width: 320px;
 }
@@ -58,20 +58,20 @@ h1 {
     margin-bottom: 2.5rem;
 }
 
-.text {
+.annotated-text {
     grid-column: 1;
 }
 
-.text p {
+.annotated-text p {
     margin: 0;
 }
 
-.rule-cell {
+.annotation-sep {
     grid-column: 3;
     position: relative;
 }
 
-.rule-cell::after {
+.annotation-sep::after {
     content: "";
     position: absolute;
     top: 0.25rem;
@@ -81,12 +81,14 @@ h1 {
     background: rgba(232,232,232,0.10);
 }
 
-.label {
+.annotation {
     grid-column: 5;
     font-size: 0.9rem;
     color: rgba(232,232,232,0.55);
     margin-top: 0.25rem;
     padding-top: 0;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .nowrap {
@@ -95,12 +97,69 @@ h1 {
 
 @media (max-width: 600px) {
 
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #ffffff;
+}
+
+footer {
+    margin-top: 2.25rem;
+    padding: 0 1.25rem 0.75rem;
+    font-size: 0.9rem;
+    color: rgba(232,232,232,0.40);
+    line-height: 1.5;
+}
+
+footer::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: rgba(232,232,232,0.10);
+    margin-bottom: 0.75rem;
+    width: 100%;
+}
+
+.link-group {
+    display: flex;
+    align-items: baseline;
+    column-gap: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.link-label {
+    width: 7.5ch;
+    flex-shrink: 0;
+    color: rgba(232,232,232,0.55);
+    user-select: none;
+}
+
+.link {
+    flex: 1 1 auto;
+}
+
+footer a,
+footer a:visited {
+    color: rgba(232,232,232,0.40);
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+
     main {
         padding-top: 3rem;
     }
-    .text p {
-        line-height: 1.6;
-    }
+
     .annotated-block {
         display: block;
         padding-bottom: 1.25rem;
@@ -118,32 +177,31 @@ h1 {
         background: rgba(232,232,232,0.06);
     }
 
-    .rule-cell::after {
+    .annotation-sep::after {
         content: none;
     }
 
-    .label {
+    .annotation {
         display: block;
         text-align: right;
         margin-top: 0.35rem;
         padding-top: 0;
         margin-bottom: 0;
     }
-}
 
-footer {
-    margin-top: 2.25rem;
-    padding-left: 1.25rem;
-    padding-bottom: 1rem;
-    font-size: 0.9rem;
-    color: rgba(232,232,232,0.35);
-}
+    .link-group {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 0.1rem;
+        margin-bottom: 0.75rem;
+    }
 
-a, a:visited {
-    color: inherit;
-    text-decoration: none;
-}
+    .link-label {
+        width: auto;
+    }
 
-a:hover, a:focus {
-    color: #ffffff;
+    footer::before {
+        display: none;
+    }
+
 }
