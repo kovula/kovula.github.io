@@ -42,7 +42,7 @@ body {
 
 main {
     flex: 1 0 auto;
-    max-width: 69ch;
+    max-width: 72ch;
     padding-top: 2.5rem;
     box-sizing: border-box;
     padding: 2.5rem 1.25rem 0;
@@ -68,7 +68,7 @@ h1 {
     position: absolute;
     top: 0.25rem;
     right: 0;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: rgba(232, 232, 232, 0.5);
     user-select: none;
 }
@@ -128,7 +128,7 @@ footer {
     padding-left: 1rem;
     padding-bottom: 1rem;
 
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: rgba(232, 232, 232, 0.35);
 
     user-select: none;
