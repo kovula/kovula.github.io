@@ -51,7 +51,7 @@ h1 {
 
 .annotated-block {
     display: grid;
-    grid-template-columns: minmax(0,32rem) 2.5rem 1px 0.75rem 7rem;
+    grid-template-columns: minmax(0,35.5rem) 2.5rem 1px 0.75rem 7rem;
     column-gap: 0;
     position: relative;
     margin-bottom: 2.5rem;
