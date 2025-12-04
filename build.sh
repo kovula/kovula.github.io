@@ -62,7 +62,7 @@ magick -background transparent \
     "$DIST_REAL_PATH/android-chrome-512x512.png" \
     "$DIST_REAL_PATH/favicon.ico"
 
-for src in "$SRC_DIR"/*.html "$SRC_DIR"/*.css "$SRC_DIR"/kovula.svg; do
+for src in "$SRC_DIR"/*.html "$SRC_DIR"/*.css "$SRC_DIR"/play.js "$SRC_DIR"/kovula.svg; do
     [ -e "$src" ] || continue
     filename="$(basename "$src")"
 
@@ -74,8 +74,16 @@ mkdir -p "$DIST_REAL_PATH/fonts"
 for src in "$SRC_DIR"/fonts/*.woff2; do
     [ -e "$src" ] || continue
     filename="$(basename "$src")"
-    echo "[build] Copying font $filename…"
+    echo "[build] Copying fonts $filename…"
     cp "$src" "$DIST_REAL_PATH/fonts/$filename"
+done
+
+mkdir -p "$DIST_REAL_PATH/audio"
+for src in "$SRC_DIR"/audio/*.mp3; do
+    [ -e "$src" ] || continue
+    filename="$(basename "$src")"
+    echo "[build] Copying audio $filename…"
+    cp "$src" "$DIST_REAL_PATH/audio/$filename"
 done
 
 if [ -f "$SRC_DIR/CNAME" ]; then

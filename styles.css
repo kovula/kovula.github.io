@@ -34,7 +34,6 @@ body {
 
 main {
     flex: 1 0 auto;
-    max-width: 73ch;
     padding: 2.5rem 1.25rem 0;
     box-sizing: border-box;
 }
@@ -52,7 +51,7 @@ h1 {
 
 .annotated-block {
     display: grid;
-    grid-template-columns: minmax(0,70ch) 1.5rem 1px 0.75rem 7rem;
+    grid-template-columns: minmax(0,32rem) 2.5rem 1px 0.75rem 7rem;
     column-gap: 0;
     position: relative;
     margin-bottom: 2.5rem;
@@ -133,9 +132,10 @@ footer::before {
 }
 
 .link-label {
-    width: 7.5ch;
+    width: 8ch;
     flex-shrink: 0;
     color: rgba(232,232,232,0.55);
+    white-space: nowrap;
     user-select: none;
 }
 
@@ -209,4 +209,17 @@ footer a:focus {
         display: none;
     }
 
+}
+
+.ipa-play {
+  font-size: 0.65em;
+  vertical-align: super;
+  padding-left: 0.15em;
+  cursor: pointer;
+  opacity: 0.75;
+  user-select: none;
+}
+
+.ipa-play:hover {
+  opacity: 1;
 }
