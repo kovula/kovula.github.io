@@ -21,7 +21,7 @@
 
     <main>
         <header>
-            <h1>
+            <h1 aria-label="KOVULA">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     viewbox="0 0 300 70"
@@ -50,7 +50,7 @@
                 </p>
             </div>
             <div class="annotation-sep"></div>
-            <div class="annotation" aria-hidden="true">
+            <div class="annotation" role="none">
                 <span class="accent">/</span>purpose
             </div>
         </section>
@@ -64,7 +64,7 @@
                 </p>
             </div>
             <div class="annotation-sep"></div>
-            <div class="annotation" aria-hidden="true">
+            <div class="annotation" role="none">
                 <span class="accent">/</span>philosophy
             </div>
         </section>
@@ -78,13 +78,15 @@
                         id="play"
                         class="ipa-play"
                         role="button"
+                        aria-controls="audio"
                         aria-label="play pronunciation"
-                    ><span class="accent">!</span>play</span>, it is stylised with terminal-inspired symbols
+                    ><span class="accent" role="none">!</span>play</span>, it is stylised with terminal-inspired symbols
                     and a trailing slash to denote a workspace or directory.
+                    <audio id="audio" src="/audio/kovula.mp3" aria-label="KOVULA pronunciation"></audio>
                 </p>
             </div>
             <div class="annotation-sep"></div>
-            <div class="annotation" aria-hidden="true">
+            <div class="annotation" role="none">
                 <span class="accent">/</span>identity
             </div>
         </section>
@@ -95,21 +97,21 @@
         <nav aria-label="KOVULA links">
             <ul>
                 <li class="link-group">
-                    <span class="link-label">/contact</span>
+                    <span class="link-label" role="none">/contact</span>
                     <address class="link">
                         <a href="mailto:mail@kovula.com">mail@kovula.com</a>
                     </address>
                 </li>
 
                 <li class="link-group">
-                    <span class="link-label">/github</span>
+                    <span class="link-label" role="none">/github</span>
                     <span class="link">
                         <a href="https://github.com/kovula">github.com/kovula</a>
                     </span>
                 </li>
 
                 <li class="link-group">
-                    <span class="link-label">/ppa</span>
+                    <span class="link-label" role="none">/ppa</span>
                     <span class="link">
                         <a href="https://launchpad.net/~kovula">launchpad.net/~kovula</a>
                     </span>
@@ -118,7 +120,6 @@
         </nav>
     </footer>
 
-    <audio id="audio" src="/audio/kovula.mp3" aria-hidden="true"></audio>
     <script src="/play.js"></script>
 </body>
 </html>
