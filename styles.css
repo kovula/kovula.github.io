@@ -56,6 +56,21 @@ h1 {
     margin: 0 0 2.75rem 0;
 }
 
+address {
+    font-style: normal;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 /* Layout containers */
 
 main {
@@ -145,7 +160,8 @@ footer::before {
     width: 100%;
 }
 
-.link-group {
+li {
+    list-style: none;
     display: flex;
     align-items: baseline;
     column-gap: 1.5rem;
@@ -158,10 +174,6 @@ footer::before {
     color: rgba(var(--color-text), 0.55);
     white-space: nowrap;
     user-select: none;
-}
-
-.link {
-    flex: 1 1 auto;
 }
 
 footer a,
@@ -224,7 +236,7 @@ footer a:focus {
         text-indent: 1ch;
     }
 
-    .link-group {
+    li {
         flex-direction: column;
         align-items: flex-start;
         row-gap: 0.1rem;
@@ -238,4 +250,5 @@ footer a:focus {
     footer::before {
         display: none;
     }
+
 }
