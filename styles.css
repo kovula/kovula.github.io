@@ -5,6 +5,37 @@
     --color-highlight: 240, 240, 240;   /* #F0F0F0 */
 }
 
+/* Base */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: rgb(var(--color-bg));
+    color: rgb(var(--color-text));
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    min-width: 320px;
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: rgb(var(--color-highlight));
+}
+
+/* Typography */
+
 @font-face {
     font-family: "Noto Sans Mono";
     src: url("fonts/NotoSansMono-Regular.woff2") format("woff2");
@@ -21,23 +52,11 @@
     font-display: swap;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+h1 {
+    margin: 0 0 2.75rem 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    background: rgb(var(--color-bg));
-    color:  rgb(var(--color-text));
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 1rem;
-    line-height: 1.6;
-    letter-spacing: -0.01em;
-    min-width: 320px;
-}
+/* Layout containers */
 
 main {
     flex: 1 0 auto;
@@ -45,9 +64,7 @@ main {
     box-sizing: border-box;
 }
 
-h1 {
-    margin: 0 0 2.75rem 0;
-}
+/* Components */
 
 .logo {
     width: 100%;
@@ -56,14 +73,23 @@ h1 {
     display: block;
 }
 
-.accent {
-    color: rgb(var(--color-accent));
-    fill: rgb(var(--color-accent));
+.ipa-play {
+    font-size: 0.65em;
+    vertical-align: super;
+    padding-left: 0.15em;
+    cursor: pointer;
+    color: rgba(var(--color-text), 0.55);
+    user-select: none;
 }
+.ipa-play:hover {
+    color: rgb(var(--color-highlight));
+}
+
+/* Annotated blocks */
 
 .annotated-block {
     display: grid;
-    grid-template-columns: minmax(0,35.5rem) 2.5rem 1px 0.75rem 7rem;
+    grid-template-columns: minmax(0, 35.5rem) 2.5rem 1px 0.75rem 7rem;
     column-gap: 0;
     position: relative;
     margin-bottom: 2.5rem;
@@ -77,11 +103,19 @@ h1 {
     margin: 0;
 }
 
+.annotation {
+    grid-column: 5;
+    font-size: 0.9rem;
+    color: rgba(var(--color-text), 0.55);
+    margin-top: 0.25rem;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
 .annotation-sep {
     grid-column: 3;
     position: relative;
 }
-
 .annotation-sep::after {
     content: "";
     position: absolute;
@@ -89,37 +123,16 @@ h1 {
     bottom: 0;
     left: 0;
     width: 1px;
-    background: rgba(var(--color-text),0.10);
+    background: rgba(var(--color-text), 0.10);
 }
 
-.annotation {
-    grid-column: 5;
-    font-size: 0.9rem;
-    color: rgba(var(--color-text),0.55);
-    margin-top: 0.25rem;
-    padding-top: 0;
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-.nowrap {
-    white-space: nowrap;
-}
-
-a, a:visited {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover, a:focus {
-    color: rgb(var(--color-highlight));
-}
+/* Footer */
 
 footer {
     margin-top: 2.25rem;
     padding: 0 1.25rem 0.75rem;
     font-size: 0.9rem;
-    color: rgba(var(--color-text),0.40);
+    color: rgba(var(--color-text), 0.40);
     line-height: 1.5;
 }
 
@@ -127,7 +140,7 @@ footer::before {
     content: "";
     display: block;
     height: 1px;
-    background: rgba(var(--color-text),0.10);
+    background: rgba(var(--color-text), 0.10);
     margin-bottom: 0.75rem;
     width: 100%;
 }
@@ -142,7 +155,7 @@ footer::before {
 .link-label {
     width: 8ch;
     flex-shrink: 0;
-    color: rgba(var(--color-text),0.55);
+    color: rgba(var(--color-text), 0.55);
     white-space: nowrap;
     user-select: none;
 }
@@ -153,14 +166,26 @@ footer::before {
 
 footer a,
 footer a:visited {
-    color: rgba(var(--color-text),0.40);
-    text-decoration: none;
+    color: rgba(var(--color-text), 0.40);
 }
 
 footer a:hover,
 footer a:focus {
     color: rgb(var(--color-highlight));
 }
+
+/* Utilities */
+
+.accent {
+    color: rgb(var(--color-accent));
+    fill: rgb(var(--color-accent));
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* Mobile/Small Screen Overrides */
 
 @media (max-width: 600px) {
 
@@ -172,7 +197,6 @@ footer a:focus {
         display: block;
         padding-bottom: 1.25rem;
         margin-bottom: 1.75rem;
-        position: relative;
     }
 
     .annotated-block::after {
@@ -182,7 +206,7 @@ footer a:focus {
         right: 0;
         bottom: 0;
         height: 1px;
-        background: rgba(var(--color-text),0.06);
+        background: rgba(var(--color-text), 0.06);
     }
 
     .annotation-sep::after {
@@ -193,13 +217,11 @@ footer a:focus {
         display: block;
         text-align: right;
         margin-top: 0.35rem;
-        padding-top: 0;
-        margin-bottom: 0;
     }
 
     .link {
-        text-indent: 1ch;
         display: block;
+        text-indent: 1ch;
     }
 
     .link-group {
@@ -216,18 +238,4 @@ footer a:focus {
     footer::before {
         display: none;
     }
-
-}
-
-.ipa-play {
-    font-size: 0.65em;
-    vertical-align: super;
-    padding-left: 0.15em;
-    cursor: pointer;
-    color: rgba(var(--color-text), 0.55);
-    user-select: none;
-}
-
-.ipa-play:hover {
-    color: rgb(var(--color-highlight));
 }
