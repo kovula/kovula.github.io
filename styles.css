@@ -71,8 +71,9 @@ li {
 }
 
 main p {
-    grid-column: 1;
     margin: 0;
+    padding-top: 1.25rem;
+    max-width: 72ch;
 }
 
 header {
@@ -81,13 +82,8 @@ header {
 
 main {
     box-sizing: border-box;
-    column-gap: 2.5rem;
-    display: grid;
     flex: 1 0 auto;
-    grid-auto-rows: min-content;
-    grid-template-columns: minmax(0, 35.5rem) auto;
-    padding: 2.75rem 1.25rem 0;
-    row-gap: 2.5rem;
+    padding: 1.5rem 1.25rem 0;
 }
 
 .logo {
@@ -161,9 +157,8 @@ footer a:hover, footer a:focus {
 
 @media (max-width: 600px) {
 
-    main {
-        display: block;
-        padding-top: 3rem;
+    main p {
+        max-width: 100%;
     }
 
     footer a {
