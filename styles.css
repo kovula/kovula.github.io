@@ -1,9 +1,9 @@
 :root {
-    --color-accent: 202, 173, 148;      /* #CAAD94 */
-    --color-bg: 48, 71, 94;             /* #30475e */
-    --color-bg-dark: 39, 58, 77;        /* #273A4D */
-    --color-highlight: 240, 240, 240;   /* #F0F0F0 */
-    --color-text: 232, 232, 232;        /* #e8e8e8 */
+    --color-accent: 223, 185, 145;
+    --color-bg: 48, 71, 94;
+    --color-bg-dark: 39, 58, 77;
+    --color-highlight: 240, 240, 240;
+    --color-text: 232, 232, 232;
 }
 
 html {
@@ -89,7 +89,7 @@ main {
 .logo {
     display: block;
     height: auto;
-    max-width: 20rem;
+    max-width: 420px;
     width: 100%;
 }
 

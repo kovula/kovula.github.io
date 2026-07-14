@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 300 300">
-  <path d="m157.88 274.36 93.93-248.71h25.13l-93.92 248.71z"/>
-  <path d="m69.98 146.3 48.87-94.2h26.08l-48.16 93.14 50.82 100.01h-27.4zM47 156.09v89.16H23.06V52.1H47v83.08"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 160 160">
+  <g>
+    <path d="M60 32 44 64v32l16 32h12v-16L56 80l16-32V32Z"/>
+    <path d="M16 32v96h16V32Z"/>
+  </g>
+  <path d="M128 32v16l-40 64v16h16v-16l40-64V32Z"/>
 </svg>
